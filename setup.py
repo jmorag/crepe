@@ -13,7 +13,7 @@ except ImportError:
 
 model_capacities = ['tiny', 'small', 'medium', 'large', 'full']
 weight_files = ['model-{}.h5'.format(cap) for cap in model_capacities]
-base_url = 'https://raw.githubusercontent.com/marl/crepe/raw/models/'
+base_url = 'https://raw.githubusercontent.com/marl/crepe/models/'
 
 if len(sys.argv) > 1 and sys.argv[1] == 'sdist':
     # exclude the weight files in sdist
@@ -27,7 +27,7 @@ else:
             compressed_path = os.path.join('crepe', compressed_file)
             if not os.path.isfile(compressed_file):
                 url = base_url + compressed_file
-                print('Downloading weight file {} from {}...'.format(compressed_file, url))
+                print('Downloading weight file {} from {}'.format(compressed_file, url))
                 urlretrieve(base_url + compressed_file, compressed_path)
             print('Decompressing ...')
             with bz2.BZ2File(compressed_path, 'rb') as source:
