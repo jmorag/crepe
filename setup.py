@@ -26,7 +26,8 @@ else:
             compressed_file = weight_file + '.bz2'
             compressed_path = os.path.join('crepe', compressed_file)
             if not os.path.isfile(compressed_file):
-                print('Downloading weight file {} ...'.format(compressed_file))
+                url = base_url + compressed_file
+                print('Downloading weight file {} from {}...'.format(compressed_file, url))
                 urlretrieve(base_url + compressed_file, compressed_path)
             print('Decompressing ...')
             with bz2.BZ2File(compressed_path, 'rb') as source:
