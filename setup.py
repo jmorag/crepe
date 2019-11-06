@@ -13,7 +13,7 @@ except ImportError:
 
 model_capacities = ['tiny', 'small', 'medium', 'large', 'full']
 weight_files = ['model-{}.h5'.format(cap) for cap in model_capacities]
-base_url = 'https://github.com/marl/crepe/raw/models/'
+base_url = 'https://raw.githubusercontent.com/marl/crepe/raw/models/'
 
 if len(sys.argv) > 1 and sys.argv[1] == 'sdist':
     # exclude the weight files in sdist
